@@ -1,1 +1,0 @@
-import "../plugins/pace/pace.min.js";
