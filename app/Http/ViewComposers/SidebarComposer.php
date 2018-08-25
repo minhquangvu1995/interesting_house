@@ -16,7 +16,6 @@ class SidebarComposer
 {
     public function compose(View $view)
     {
-//        dd($this->sideBar);
         $data = [
             'user' => Auth::user()->toArray()
         ];

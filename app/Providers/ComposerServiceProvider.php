@@ -13,8 +13,8 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('components/sidebar', 'App\Http\ViewComposers\SidebarComposer');
-        view()->composer('components/header', 'App\Http\ViewComposers\HeaderComposer');
+        view()->composer('includes/sidebar', 'App\Http\ViewComposers\SidebarComposer');
+        view()->composer('includes/header', 'App\Http\ViewComposers\HeaderComposer');
     }
 
     /**

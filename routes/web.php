@@ -13,6 +13,12 @@
 
 //Route::get('/', 'HomeController@index');
 
+Route::prefix('auth')->group(function(){
+    Route::get('/{provider}', 'AuthController@redirectToProvider');
+    Route::get('/{provide}/callback', 'AuthController@handleProviderCallback');
+    Route::get('/logout', 'AuthController@logOut');
+});
+
 Route::get('/', function () {
     return redirect('/dashboard/v2');
 });
@@ -261,9 +267,4 @@ Route::get('/register/v3', function () {
 });
 Route::get('/helper/css', function () {
     return view('pages/helper-css');
-});
-Route::prefix('auth')->group(function(){
-    Route::get('/{provider}', 'AuthController@redirectToProvider');
-    Route::get('/{provide}/callback', 'AuthController@handleProviderCallback');
-    Route::get('/logout', 'AuthController@logOut');
 });
