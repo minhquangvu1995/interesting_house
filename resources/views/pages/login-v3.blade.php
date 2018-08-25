@@ -9,7 +9,7 @@
 		<div class="news-feed">
 			<div class="news-image" style="background-image: url(../assets/img/login-bg/login-bg-11.jpg)"></div>
 			<div class="news-caption">
-				<h4 class="caption-title"><b>Color</b> Admin App</h4>
+				<h4 class="caption-title"><b>Interesting</b> House</h4>
 				<p>
 					Download the Color Admin app for iPhone®, iPad®, and Android™. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 				</p>
@@ -21,8 +21,8 @@
 			<!-- begin login-header -->
 			<div class="login-header">
 				<div class="brand">
-					<span class="logo"></span> <b>Color</b> Admin
-					<small>responsive bootstrap 3 admin template</small>
+					<span class="logo"></span> <b>Interesting</b> House
+					<small>Interesting inside, go to and experience</small>
 				</div>
 				<div class="icon">
 					<i class="fa fa-sign-in"></i>
@@ -52,7 +52,7 @@
 					</div>
 					<hr />
 					<p class="text-center text-grey-darker">
-						&copy; Color Admin All Right Reserved 2018
+						&copy; Color Admin All Right Reserved 2018 - Edited by minhvu2904
 					</p>
 				</form>
 			</div>

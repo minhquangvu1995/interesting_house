@@ -5,8 +5,6 @@ $hiddenSearch = (!empty($headerLanguageBar)) ? 'hidden-xs' : '';
 $headerMegaMenu = (!empty($headerMegaMenu)) ? $headerMegaMenu : '';
 
 //Auth::logout();
-$user = Auth::user() ? Auth::user()->toArray() : [];
-//	dd(Auth::user()->toArray());
 ?>
 <!-- begin #header -->
 <div id="header" class="header {{ $headerClass }}">
@@ -34,7 +32,7 @@ $user = Auth::user() ? Auth::user()->toArray() : [];
 
     {{--@includeWhen($headerMegaMenu, 'includes.header-mega-menu')--}}
 
-    <?php if($user):?>
+    @if($data['user'])
     <ul class="navbar-nav navbar-right">
         <li class="{{ $hiddenSearch }}">
             <form class="navbar-form">
@@ -137,7 +135,7 @@ $user = Auth::user() ? Auth::user()->toArray() : [];
         <li class="dropdown navbar-user">
             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="/assets/img/user/user-13.jpg" alt=""/>
-                <span class="d-none d-md-inline"><?=$user['name']?></span> <b class="caret"></b>
+                <span class="d-none d-md-inline"><?=$data['user']['name']?></span> <b class="caret"></b>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <a href="javascript:;" class="dropdown-item">Edit Profile</a>
@@ -150,10 +148,10 @@ $user = Auth::user() ? Auth::user()->toArray() : [];
         </li>
     </ul>
     <!-- end header navigation right -->
-    <?php else: ?>
-    <div class="navbar-nav navbar-right">
+    @else
+    <div style="padding: 10px 20px;">
         <p class="text-center">Login to continue</p>
     </div>
-    <?php endif;?>
+    @endif
 </div>
 <!-- end #header -->

@@ -17,7 +17,7 @@ class HeaderComposer
     public function compose(View $view)
     {
         $data = [
-            'user' => Auth::user()->toArray()
+            'user' => Auth::user() ? Auth::user()->toArray() : []
         ];
         $view->with('data', $data);
     }

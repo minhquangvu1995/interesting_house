@@ -13,11 +13,13 @@
 
 //Route::get('/', 'HomeController@index');
 
-Route::prefix('auth')->group(function(){
+Route::prefix('auth')->group(function () {
     Route::get('/{provider}', 'AuthController@redirectToProvider');
     Route::get('/{provide}/callback', 'AuthController@handleProviderCallback');
     Route::get('/logout', 'AuthController@logOut');
 });
+
+Route::get('/login', 'LoginController@showLoginPage');
 
 Route::get('/', function () {
     return redirect('/dashboard/v2');
