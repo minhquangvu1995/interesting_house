@@ -2,27 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
+use App\Models\User;
+use App\Repositories\PostRepositoryInterface;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    protected $postRepository;
+
+    public function __construct(PostRepositoryInterface $postRepository)
     {
-        $this->middleware('auth');
+        $this->postRepository = $postRepository;
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function showHomePage()
     {
-        return view('home/home');
+        $postAllActive = $this->postRepository->allActive();
+
+        return view('pages/home', [
+            'post_all_active' => $postAllActive
+        ]);
     }
 }

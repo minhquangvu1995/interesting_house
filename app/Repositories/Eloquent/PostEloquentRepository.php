@@ -29,11 +29,11 @@ class PostEloquentRepository extends EloquentBaseRepository implements PostRepos
 
     public function allActive()
     {
-        return $this->model->where('active', 1)->get();
+        return $this->model->with('users')->where('active', 1)->orderBy('id', 'DESC')->get();
     }
 
     public function findByID(int $id)
     {
-        return $this->model->where('id', $id)->where('active', 1)->first();
+        return $this->model->find('id', $id)->where('active', 1)->first();
     }
 }

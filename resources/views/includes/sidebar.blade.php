@@ -12,12 +12,12 @@
                     <a href="javascript:;" data-toggle="nav-profile">
                         <div class="cover with-shadow"></div>
                         <div class="image">
-                            <img src="/assets/img/user/user-13.jpg" alt=""/>
+                            <img src="<?=$data['user']['avatar']?>" alt=""/>
                         </div>
                         <div class="info">
                             <b class="caret pull-right"></b>
-                            Sean Ngu
-                            <small>Front end developer</small>
+                            <?=$data['user']['name']?>
+                            {{--<small>Front end developer</small>--}}
                         </div>
                     </a>
                 </li>

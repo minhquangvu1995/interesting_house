@@ -11,4 +11,9 @@ class Post extends Model
     protected $primaryKey = 'id';
 
     public $timestamps = false;
+
+    public function users()
+    {
+        return $this->hasOne('App\Models\User', 'id', 'user_id');
+    }
 }

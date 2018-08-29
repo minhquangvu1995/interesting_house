@@ -11,8 +11,6 @@
 |
 */
 
-//Route::get('/', 'HomeController@index');
-
 Route::prefix('auth')->group(function () {
     Route::get('/{provider}', 'AuthController@redirectToProvider');
     Route::get('/{provide}/callback', 'AuthController@handleProviderCallback');
@@ -21,15 +19,12 @@ Route::prefix('auth')->group(function () {
 
 Route::get('/login', 'LoginController@showLoginPage');
 
-Route::get('/', function () {
-    return redirect('/dashboard/v2');
-});
-Route::get('/dashboard/v1', function () {
-    return view('pages/dashboard-v1');
-});
-Route::get('/dashboard/v2', function () {
-    return view('pages/dashboard-v2');
-});
+Route::get('/{name}', [
+    'as' => 'home',
+    'uses' => 'HomeController@showHomePage'
+])->where('name', 'home|'); //{name} là rỗng hay "home" đều gọi tới cùng 1 controller!
+
+
 Route::get('/email/inbox', function () {
     return view('pages/email-inbox');
 });

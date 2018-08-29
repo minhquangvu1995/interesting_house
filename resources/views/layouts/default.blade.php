@@ -3,7 +3,7 @@
 <head>
 	@include('includes.head')
 </head>
-@php
+<?php
 	$bodyClass = (!empty($boxedLayout)) ? 'boxed-layout' : '';
 	$bodyClass .= (!empty($paceTop)) ? 'pace-top ' : '';
 	$bodyClass .= (!empty($bodyExtraClass)) ? $bodyExtraClass . ' ' : '';
@@ -11,7 +11,7 @@
 	$sidebarTwo = (!empty($sidebarTwo)) ? $sidebarTwo : '';
 	$topMenu = (!empty($topMenu)) ? $topMenu : '';
 	$footer = (!empty($footer)) ? $footer : '';
-	
+
 	$pageContainerClass = (!empty($topMenu)) ? 'page-with-top-menu ' : '';
 	$pageContainerClass .= (!empty($sidebarRight)) ? 'page-with-right-sidebar ' : '';
 	$pageContainerClass .= (!empty($sidebarLight)) ? 'page-with-light-sidebar ' : '';
@@ -23,9 +23,9 @@
 	
 	$contentClass = (!empty($contentFullWidth) || !empty($contentFullHeight)) ? 'content-full-width ' : '';
 	$contentClass .= (!empty($contentInverseMode)) ? 'content-inverse-mode ' : '';
-@endphp
+?>
 <body class="{{ $bodyClass }}">
-	@include('includes.component.page-loader')
+	{{--@include('includes.component.page-loader')--}}
 	
 	<div id="page-container" class="page-container {{-- fade --}} page-sidebar-fixed page-header-fixed {{ $pageContainerClass }}">
 		
@@ -41,9 +41,9 @@
 			@yield('content')
 		</div>
 		
-		@includeWhen($footer, 'includes.footer')
+		{{--@include('includes.footer')--}}
 		
-		@include('includes.component.theme-panel')
+		{{--@include('includes.component.theme-panel')--}}
 		
 		@include('includes.component.scroll-top-btn')
 		

@@ -19,6 +19,7 @@ class SidebarComposer
         $data = [
             'user' => Auth::user() ? Auth::user()->toArray() : []
         ];
+
         $view->with('data', $data);
     }
 }

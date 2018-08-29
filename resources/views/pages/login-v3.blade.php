@@ -1,6 +1,10 @@
 @extends('layouts.empty', ['paceTop' => true, 'bodyExtraClass' => 'bg-white'])
 
-@section('title', 'Login Page')
+@section('title', 'Login')
+
+@push('css')
+	<link href="/assets/plugins/bootstrap-social/bootstrap-social.css" rel="stylesheet" />
+@endpush
 
 @section('content')
 	<!-- begin login -->
@@ -32,23 +36,28 @@
 			<!-- begin login-content -->
 			<div class="login-content">
 				<form action="/" method="GET" class="margin-bottom-0">
-					<div class="form-group m-b-15">
-						<input type="text" class="form-control form-control-lg" placeholder="Email Address" required />
-					</div>
-					<div class="form-group m-b-15">
-						<input type="password" class="form-control form-control-lg" placeholder="Password" required />
-					</div>
-					<div class="checkbox checkbox-css m-b-30">
-						<input type="checkbox" id="remember_me_checkbox" value="" />
-						<label for="remember_me_checkbox">
-							Remember Me
-						</label>
-					</div>
+					{{--<div class="form-group m-b-15">--}}
+						{{--<input type="text" class="form-control form-control-lg" placeholder="Email Address" required />--}}
+					{{--</div>--}}
+					{{--<div class="form-group m-b-15">--}}
+						{{--<input type="password" class="form-control form-control-lg" placeholder="Password" required />--}}
+					{{--</div>--}}
+					{{--<div class="checkbox checkbox-css m-b-30">--}}
+						{{--<input type="checkbox" id="remember_me_checkbox" value="" />--}}
+						{{--<label for="remember_me_checkbox">--}}
+							{{--Remember Me--}}
+						{{--</label>--}}
+					{{--</div>--}}
+					{{--<div class="m-t-20 m-b-40 p-b-40 text-inverse">--}}
+						{{--Not a member yet? Click <a href="/register/v3" class="text-success">here</a> to register.--}}
+					{{--</div>--}}
 					<div class="login-buttons">
-						<button type="submit" class="btn btn-success btn-block btn-lg">Sign me in</button>
-					</div>
-					<div class="m-t-20 m-b-40 p-b-40 text-inverse">
-						Not a member yet? Click <a href="/register/v3" class="text-success">here</a> to register.
+						<a href="/auth/facebook" class="btn btn-social btn-facebook btn-block btn-lg">
+							<span class="fab fa-facebook"></span> Sign in with Facebook
+						</a>
+						<a href="/auth/google" class="btn btn-social btn-google btn-block btn-lg">
+							<span class="fab fa-google"></span> Sign in with Google
+						</a>
 					</div>
 					<hr />
 					<p class="text-center text-grey-darker">

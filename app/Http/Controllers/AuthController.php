@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UserProfile;
 use Socialite, Auth, Redirect, Session, URL;
-use App\User;
+use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -18,7 +17,10 @@ class AuthController extends Controller
         if (!Session::has('pre_url')) {
             Session::put('pre_url', URL::previous());
         } else {
-            if (URL::previous() != URL::to('login')) Session::put('pre_url', URL::previous());
+            if (URL::previous() != URL::to('login'))
+                Session::put('pre_url', URL::previous());
+            else
+                Session::put('pre_url', URL::to('/'));
         }
         return Socialite::driver($provider)->redirect();
     }
@@ -35,6 +37,7 @@ class AuthController extends Controller
 
         $authUser = $this->findOrCreateUser($user, $provider);
         Auth::login($authUser, true);
+
         return Redirect::to(Session::get('pre_url'));
     }
 

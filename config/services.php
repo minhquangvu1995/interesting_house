@@ -42,6 +42,6 @@ return [
     'google' => [
         'client_id' => '635548437566-v46dt067h3aaacv7sc5evhlgv17agdhj.apps.googleusercontent.com',
         'client_secret' => 'pI4XzxVW5fXoqaC5tpuKTDyE',
-        'redirect' => 'http://ihouse.vn/auth/google/callback',
+        'redirect' => '/auth/google/callback',
     ],
 ];

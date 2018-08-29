@@ -16,13 +16,13 @@ return [
         [
             'icon' => 'fas fa-home',
             'title' => 'Home',
-            'url' => 'javascript:;'
+            'url' => '/home'
         ],
 
         [
             'icon' => 'fas fa-user',
             'title' => 'Profile',
-            'url' => 'javascript:;'
+            'url' => '/profile'
         ]
     ],
 
